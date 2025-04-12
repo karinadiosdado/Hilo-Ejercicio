@@ -26,13 +26,13 @@ public class AlfanumericoTarea implements Runnable{
     @Override
     public void run() {
         try {
-            if(tipo==tipo.NUMERO){
+            if(tipo==Tipo.NUMERO){
                 System.out.println("Hilo"+ Thread.currentThread().getName());
                 for (int i = 1; i < 10; i++) {
                     System.out.println(Thread.currentThread().getName() + i);        
                     Thread.sleep(2000);
                 }
-            }else if(tipo == tipo.LETRA){
+            }else if(tipo == Tipo.LETRA){
                 System.out.println("Hilo" + Thread.currentThread().getName());
                 for (char x = 'a'; x <='z'; x++) {
                     
@@ -41,7 +41,8 @@ public class AlfanumericoTarea implements Runnable{
                 }
             }
         } catch (InterruptedException e) {
-            
+             System.out.println(e);
+                e.printStackTrace();
         }
     }
     
